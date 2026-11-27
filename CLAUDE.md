@@ -13,7 +13,7 @@
 - `js/theme.js`: the light/dark theme toggle used on every page.
 - `tools/<tool-name>/`: one folder per tool, holding its own `index.html`, `.css` and `.js`.
   - `tools/circuit/`: breadboard circuit simulator (battery, wire, switch, bulb).
-  - `tools/tool-1/`: placeholder page ("coming soon"), no tool logic.
+  - `tools/resistor/`: 4-band resistor colour code (pick colours, see the value).
 - `CLAUDE.md`: this file (instructions for Claude).
 
 Each page loads `css/base.css` and `js/theme.js`, includes the shared header,
@@ -43,6 +43,7 @@ Update this section as files and folders are added.
 1. **Portal + first tool (done):**
    - Portal (done): homepage, shared header, light/dark toggle, and a placeholder card "Tool 1 — coming soon" that opens and closes, which proves the navigation pattern.
    - Circuit simulator (done): battery, wire, switch, bulb on a breadboard.
+   - Replace the placeholder with a real tool (done): Resistor Colour Code, where students pick 4 bands and see the value and tolerance.
 2. **Improve the circuit simulator (proposed):** drag-and-drop placing; save and reload a design.
 3. **More tools (proposed):** add Engineering Design tools one at a time, using the steps above.
 

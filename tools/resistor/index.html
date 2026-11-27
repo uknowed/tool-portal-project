@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resistor Colour Code</title>
+  <script>
+    try {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="resistor.css">
+  <script src="../../js/theme.js" defer></script>
+  <script src="resistor.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-name" href="../../index.html">Engineering Design Tools</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../../index.html">Home</a>
+      </nav>
+      <button type="button" class="btn" id="theme-toggle" aria-pressed="false">Dark theme: off</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <a class="back-link" href="../../index.html">&larr; Back to all tools</a>
+      <h1>Resistor Colour Code</h1>
+      <p class="lead">Pick the four colour bands on a resistor to find its value. Read the bands from the left; the tolerance band (often gold or silver) is on the right, a little apart from the others.</p>
+
+      <div class="rc">
+        <section class="panel" aria-label="Resistor">
+          <svg id="resistor" viewBox="0 0 320 90" role="img" aria-label="Resistor drawing">
+            <line x1="0" y1="45" x2="320" y2="45" class="rc-lead"></line>
+            <rect x="60" y="18" width="200" height="54" rx="22" class="rc-body"></rect>
+            <rect id="band-0" x="92" y="18" width="14" height="54" class="rc-band"></rect>
+            <rect id="band-1" x="124" y="18" width="14" height="54" class="rc-band"></rect>
+            <rect id="band-2" x="156" y="18" width="14" height="54" class="rc-band"></rect>
+            <rect id="band-3" x="214" y="18" width="14" height="54" class="rc-band"></rect>
+          </svg>
+
+          <div class="rc-fields">
+            <label class="rc-field">
+              <span>Band 1: first digit</span>
+              <span class="rc-select-row"><span class="rc-swatch" id="swatch-0"></span><select id="sel-0"></select></span>
+            </label>
+            <label class="rc-field">
+              <span>Band 2: second digit</span>
+              <span class="rc-select-row"><span class="rc-swatch" id="swatch-1"></span><select id="sel-1"></select></span>
+            </label>
+            <label class="rc-field">
+              <span>Band 3: multiplier</span>
+              <span class="rc-select-row"><span class="rc-swatch" id="swatch-2"></span><select id="sel-2"></select></span>
+            </label>
+            <label class="rc-field">
+              <span>Band 4: tolerance</span>
+              <span class="rc-select-row"><span class="rc-swatch" id="swatch-3"></span><select id="sel-3"></select></span>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel" aria-label="Result">
+          <p class="rc-label">Value</p>
+          <p class="rc-value" id="value" aria-live="polite"></p>
+          <p class="rc-range" id="range"></p>
+          <h2 class="rc-how-title">How it's worked out</h2>
+          <ol class="rc-steps" id="steps"></ol>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Engineering Design &middot; Year 1</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* Resistor colour code tool: plain layout using the shared theme colors. */
+
+.rc {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .rc {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 0;
+}
+
+#resistor {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+.rc-lead {
+  stroke: var(--muted);
+  stroke-width: 4;
+}
+
+.rc-body {
+  fill: #e6d2a8;
+  stroke: #8a7550;
+  stroke-width: 1.5;
+}
+
+/* A thin outline keeps white, black and silver bands visible. */
+.rc-band {
+  stroke: rgba(0, 0, 0, 0.35);
+  stroke-width: 1;
+}
+
+.rc-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 560px) {
+  .rc-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.rc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.rc-select-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rc-swatch {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.rc-field select {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  font: inherit;
+  font-weight: 400;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.rc-label {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.rc-value {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.rc-range {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.rc-how-title {
+  font-size: 1rem;
+  margin: 20px 0 6px;
+}
+
+.rc-steps {
+  margin: 0;
+  padding-left: 1.3em;
+}
+
+.rc-steps li + li {
+  margin-top: 6px;
+}
