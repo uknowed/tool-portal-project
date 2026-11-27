@@ -8,10 +8,15 @@
 
 ## Project Structure
 
-The project is nearly empty for now. Everything lives at the top level:
-
+- `index.html`: portal home page with a card for each tool.
+- `css/base.css`: shared styles and the light/dark color variables.
+- `js/theme.js`: the light/dark theme toggle used on every page.
+- `tools/<tool-name>/`: one folder per tool, holding its own `index.html`, `.css` and `.js`.
+  - `tools/circuit/`: breadboard circuit simulator (battery, wire, switch, bulb).
 - `CLAUDE.md`: this file (instructions for Claude).
 
+Each page loads `css/base.css` and `js/theme.js`, includes the shared header,
+and has a small script in `<head>` that applies the saved theme.
 Update this section as files and folders are added.
 
 ## Key Requirements

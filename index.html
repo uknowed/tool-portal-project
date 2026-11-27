@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engineering Design Tools</title>
+  <script>
+    // Apply the saved theme before the page draws, so it doesn't flash.
+    try {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/base.css">
+  <script src="js/theme.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-name" href="index.html">Engineering Design Tools</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+      </nav>
+      <button type="button" class="btn" id="theme-toggle" aria-pressed="false">Dark theme: off</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Try out engineering tools</h1>
+      <p class="lead">Small hands-on tools for Year 1 Engineering Design. Pick one to get started.</p>
+
+      <ul class="tool-grid">
+        <li>
+          <a class="tool-card" href="tools/circuit/index.html">
+            <h2>Circuit Simulator</h2>
+            <p>Build a circuit on a breadboard with a battery, wires, a switch and a bulb, and see if the bulb lights.</p>
+            <span class="card-link">Open tool &rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Engineering Design &middot; Year 1</div>
+  </footer>
+</body>
+</html>

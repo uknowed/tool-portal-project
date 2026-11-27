@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Circuit Simulator</title>
+  <script>
+    try {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="circuit.css">
+  <script src="../../js/theme.js" defer></script>
+  <script src="circuit.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-name" href="../../index.html">Engineering Design Tools</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../../index.html">Home</a>
+      </nav>
+      <button type="button" class="btn" id="theme-toggle" aria-pressed="false">Dark theme: off</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Circuit Simulator</h1>
+      <p class="lead">Place parts on the breadboard. When there's a full loop from the battery's + end, through a bulb, and back to its &minus; end, the bulb lights up.</p>
+
+      <div class="sim">
+        <section class="palette" aria-label="Parts">
+          <h2 class="palette-title">Parts</h2>
+          <div class="palette-buttons" role="group" aria-label="Choose a part">
+            <button type="button" class="btn tool-btn" data-tool="battery" aria-pressed="false">Battery</button>
+            <button type="button" class="btn tool-btn" data-tool="wire" aria-pressed="true">Wire</button>
+            <button type="button" class="btn tool-btn" data-tool="switch" aria-pressed="false">Switch</button>
+            <button type="button" class="btn tool-btn" data-tool="bulb" aria-pressed="false">Bulb</button>
+            <button type="button" class="btn tool-btn" data-tool="erase" aria-pressed="false">Eraser</button>
+          </div>
+          <button type="button" class="btn clear-btn" id="clear-board">Clear board</button>
+          <details class="howto">
+            <summary>How it works</summary>
+            <ul>
+              <li>Pick a part, then tap two holes. The part's two legs go in those holes.</li>
+              <li>For the battery, the first hole is the <strong>+</strong> end and the second is the <strong>&minus;</strong> end.</li>
+              <li>Holes in the same shaded column strip are joined inside the board, so parts in the same strip are connected.</li>
+              <li>Tap a switch to open or close it.</li>
+              <li>Pick the Eraser and tap a part to remove it.</li>
+            </ul>
+          </details>
+        </section>
+
+        <section class="board-area" aria-label="Breadboard">
+          <p class="hint" id="hint" aria-live="polite"></p>
+          <div class="board-wrap">
+            <svg id="board" role="img" aria-label="Breadboard"></svg>
+          </div>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Engineering Design &middot; Year 1</div>
+  </footer>
+</body>
+</html>
